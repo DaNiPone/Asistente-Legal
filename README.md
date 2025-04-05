@@ -1,81 +1,87 @@
-# Sistema RAG para Consultas Inmobiliarias en Cataluña
+# Asistente Legal Inmobiliario para Cataluña
 
-Este proyecto implementa un sistema RAG (Retrieval Augmented Generation) para responder consultas sobre normativa inmobiliaria en Cataluña. Utiliza una base de conocimiento vectorial de documentos PDF y modelos de lenguaje para proporcionar respuestas precisas y contextualizadas.
+Sistema de Recuperación Aumentada por Generación (RAG) especializado en información legal inmobiliaria para Cataluña.
 
 ## Características
 
-- **Procesamiento de documentos PDF**: Ingesta automática de documentos legales, incluyendo PDFs protegidos.
-- **Base de datos vectorial**: Almacenamiento eficiente de embeddings utilizando Chroma DB.
-- **Interfaz web**: Aplicación Flask con diseño responsive para realizar consultas.
-- **Múltiples modelos LLM**: Soporte para varios modelos de OpenAI y Anthropic.
-- **Exportación de resultados**: Generación de PDFs y checklists a partir de las respuestas.
-- **Preguntas sugeridas**: Organización por categorías de consultas frecuentes.
+- Interfaz web intuitiva para consultar información legal
+- Base de datos vectorial para búsqueda semántica
+- Soporte para múltiples modelos de IA (OpenAI y Anthropic)
+- Procesador de documentos PDF optimizado
+- Sistema de referencia a fuentes consultadas
 
 ## Requisitos
 
 - Python 3.8 o superior
-- Claves API de OpenAI y/o Anthropic (configurable)
-- Dependencias definidas en `requirements.txt`
+- Claves API de OpenAI y Anthropic
+- Dependencias listadas en `requirements.txt`
 
 ## Instalación
 
-1. Clonar el repositorio:
+1. Clone el repositorio:
    ```
    git clone https://github.com/tu-usuario/mi-sistema-rag.git
    cd mi-sistema-rag
    ```
 
-2. Crear un entorno virtual e instalar dependencias:
+2. Cree un entorno virtual:
    ```
-   python -m venv venv
-   # En Windows
-   venv\Scripts\activate
-   # En Linux/Mac
-   source venv/bin/activate
-   
+   python -m venv .venv
+   ```
+
+3. Active el entorno virtual:
+   - Windows:
+     ```
+     .venv\Scripts\activate
+     ```
+   - Linux/Mac:
+     ```
+     source .venv/bin/activate
+     ```
+
+4. Instale las dependencias:
+   ```
    pip install -r requirements.txt
    ```
 
-3. Configurar las claves API:
-   - Editar los archivos `app.py` e `ingestador.py` para añadir tus claves API de OpenAI y/o Anthropic.
+5. Configure las variables de entorno con sus claves API:
+   ```
+   $env:OPENAI_API_KEY="su-clave-api-openai"
+   $env:ANTHROPIC_API_KEY="su-clave-api-anthropic"
+   ```
 
 ## Uso
 
-### Procesamiento de documentos
-
-1. Coloca tus archivos PDF en la carpeta `documentos`.
-2. Ejecuta el procesador de documentos:
+1. Para procesar documentos nuevos:
    ```
    python ingestador.py
    ```
-   Esto creará una base de datos vectorial en la carpeta `base_datos`.
 
-### Aplicación web
-
-1. Inicia la aplicación Flask:
+2. Para iniciar la aplicación web:
    ```
    python app.py
    ```
-2. Abre tu navegador y accede a `http://localhost:5000`
-3. Realiza consultas sobre normativa inmobiliaria en Cataluña.
 
-## Estructura del proyecto
+3. Acceda a la interfaz web:
+   http://127.0.0.1:5000/
 
-- `app.py`: Aplicación web Flask.
-- `ingestador.py`: Procesador de documentos PDF.
-- `documentos/`: Carpeta para almacenar archivos PDF a procesar.
-- `base_datos/`: Carpeta donde se guarda la base de datos vectorial.
+## Estructura de carpetas
 
-## Personalización
+- `app.py`: Aplicación web principal
+- `ingestador.py`: Procesador de documentos
+- `documentos/`: Carpeta para almacenar los PDFs legales
+- `base_datos/`: Contiene la base de datos vectorial
+- `requirements.txt`: Lista de dependencias
 
-- Puedes ajustar los parámetros de chunking en `ingestador.py`
-- Modifica los prompts para los diferentes modelos en `app.py`
-- Añade o elimina categorías de preguntas sugeridas en `app.py`
+## Solución de problemas
+
+Si encuentra errores de codificación con caracteres especiales, asegúrese de:
+1. Configurar correctamente las variables de entorno:
+   ```
+   $env:PYTHONIOENCODING="utf-8"
+   ```
+2. Utilizar codificación UTF-8 en todos los archivos
 
 ## Licencia
 
-Este proyecto está disponible bajo licencia MIT.
-
-## Contribuciones
-
-Las contribuciones son bienvenidas. Por favor, crea un issue o pull request para proponer mejoras. 
+Este proyecto está licenciado bajo la licencia MIT - vea el archivo LICENSE para más detalles. 

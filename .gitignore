@@ -39,7 +39,4 @@ documentos/
 # Archivos del sistema
 .DS_Store
 Thumbs.db
-desktop.ini
-
-# Carpetas específicas del SO
-$RECYCLE.BIN/ 
+desktop.ini 

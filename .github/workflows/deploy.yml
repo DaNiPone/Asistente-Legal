@@ -1,4 +1,4 @@
-name: Test y verificación del sistema RAG
+name: Test y verificación del sistema
 
 on:
   push:
