@@ -1,0 +1,45 @@
+# Entorno virtual de Python
+venv/
+.venv/
+env/
+ENV/
+.env
+
+# Base de datos Chroma
+base_datos/
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Documentos
+documentos/
+
+# Archivos de configuración local
+.env.local
+.env.*.local
+.env
+*.env
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
+*~
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Carpetas específicas del SO
+$RECYCLE.BIN/ 
